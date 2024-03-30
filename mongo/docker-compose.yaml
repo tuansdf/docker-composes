@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:7-jammy
+    restart: always
+    container_name: mongo-1
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+    volumes:
+      - $PWD/mongo_data:/data/db
